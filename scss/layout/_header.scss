@@ -1,0 +1,47 @@
+.header {
+  background: linear-gradient(rgba(0, 0, 0, 0.4)),
+    url("/images/mobile/image-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: $clr-white;
+  min-height: 43.3rem;
+  padding-top: 2.67rem;
+  text-transform: uppercase;
+
+  @include lg {
+    background: linear-gradient(rgba(0, 0, 0, 0.4)),
+      url("/images/desktop/image-hero.jpg");
+  }
+
+  @include lg {
+    padding: 4.26rem 0 8.73rem;
+  }
+
+  a {
+    color: $clr-white;
+  }
+}
+
+#main {
+  margin-top: 10.87rem;
+  padding: 1.6rem;
+  border: 2px solid $clr-white;
+  max-width: 32rem;
+
+  @include lg {
+    max-width: 43.3rem;
+    padding: 2.67rem 2.67rem 2rem;
+    margin-top: 8.67rem;
+  }
+
+  h1 {
+    @media screen and (min-width: 350px) {
+      font-size: 2.67rem;
+    }
+
+    @include lg {
+      font-size: 4.8rem;
+      line-height: 97%;
+    }
+  }
+}

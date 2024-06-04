@@ -1,0 +1,87 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  &__logo,
+  &__toggle {
+    position: relative;
+    z-index: 100;
+
+    @include lg {
+      position: unset;
+      z-index: initial;
+    }
+  }
+
+  &__toggle {
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    @include lg {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    height: 100vh;
+    padding: 14.87rem 1.67rem;
+    background-color: $clr-black;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-out;
+
+    @include lg {
+      position: unset;
+      z-index: 0;
+      height: auto;
+      visibility: inherit;
+      opacity: 1;
+      background: inherit;
+      padding: 0;
+      transform: initial;
+      text-transform: capitalize;
+
+      display: grid;
+      grid-template-columns: repeat(5, max-content);
+      column-gap: 2.05rem;
+      align-items: end;
+    }
+
+    li {
+      padding-bottom: 1.6rem;
+
+      @include med {
+        text-align: center;
+      }
+
+      @include lg {
+        padding: 0;
+      }
+    }
+
+    a {
+      font-family: $font-heading;
+      font-size: 1.6rem;
+      transition: border 0.3s ease-out;
+
+      @include lg {
+        font-size: initial;
+        line-height: 167%;
+      }
+    }
+  }
+
+  .active {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transform: translateX(0);
+  }
+}

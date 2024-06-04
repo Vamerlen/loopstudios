@@ -1,0 +1,49 @@
+.container {
+  width: 90%;
+  max-width: 74rem;
+  margin: 0 auto;
+
+  @include lg {
+    width: 95%;
+    padding-left: 0.5rem;
+  }
+}
+
+.cta {
+  color: $clr-black;
+  font-size: 0.93rem;
+  letter-spacing: 0.33rem;
+  display: inline-block;
+  border: 1px solid;
+  padding: 0.73rem 2.67rem;
+
+  &:hover {
+    background-color: $clr-black;
+    color: $clr-white;
+  }
+
+  @include med {
+    padding: 0.73rem 0;
+  }
+}
+
+.underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    opacity: 0;
+    height: 2px;
+    left: 0;
+    bottom: -0.43rem;
+    background-color: $clr-white;
+    transition: width 0.2s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    width: 100%;
+  }
+}
